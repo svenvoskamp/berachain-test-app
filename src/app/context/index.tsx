@@ -1,7 +1,7 @@
 'use client'
 
-import { EthersAdapter } from '@reown/appkit-adapter-ethers'
-import { createAppKit } from '@reown/appkit/react'
+import { Ethers5Adapter } from '@reown/appkit-adapter-ethers5'
+import { createAppKit, modal } from '@reown/appkit/react'
 import { berachain } from '@reown/appkit/networks'
 
 export const createModal = () => {
@@ -20,8 +20,8 @@ export const createModal = () => {
   }
 
   // Create the modal
-  createAppKit({
-    adapters: [new EthersAdapter()],
+  const modal = createAppKit({
+    adapters: [new Ethers5Adapter()],
     projectId,
     networks: [berachain],
     featuredWalletIds: ['225affb176778569276e484e1b92637ad061b01e13a048b35a9d280c3b58970f'],
@@ -34,3 +34,4 @@ export const createModal = () => {
     }
   })
 }
+export { modal }
